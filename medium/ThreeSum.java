@@ -5,12 +5,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Triplets {
+public class ThreeSum {
     public static void main(String[]args) {
         int[] arr1 = {-1,0,1,2,-1,-4};
         int[] arr2 = {0,1,1};
         int[] arr3 = {-1,0,1,2,-1,-4,-2,-3,3,0,4};
-        threeSum(arr3).stream().forEach(System.out::println); // [[-4,0,4],[-4,1,3],[-3,-1,4],[-3,0,3],[-3,1,2],[-2,-1,3],[-2,0,2],[-1,-1,2],[-1,0,1]]
+        threeSum(arr1).stream().forEach(System.out::println); // [[-4,0,4],[-4,1,3],[-3,-1,4],[-3,0,3],[-3,1,2],[-2,-1,3],[-2,0,2],[-1,-1,2],[-1,0,1]]
     }
     public static List<List<Integer>> threeSum(int[] nums) {
         ArrayList<List<Integer>> triplets = new ArrayList<>();
