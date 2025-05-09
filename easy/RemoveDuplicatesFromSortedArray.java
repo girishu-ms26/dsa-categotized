@@ -10,14 +10,15 @@ public class RemoveDuplicatesFromSortedArray {
         System.out.println(removeDuplicates(arrayTWo));
     }
     public static int removeDuplicates(int[] nums) {
-        HashSet<Integer> withoutDuplicates = new HashSet<>();
-        Arrays.stream(nums).forEach(i -> withoutDuplicates.add(i));
-        List<Integer> integers = new ArrayList<>(withoutDuplicates);
-        Collections.sort(integers);
+        HashSet<Integer> hashSet = new HashSet<>();
+        Arrays.stream(nums).forEach(n -> hashSet.add(n));
+        List<Integer> numbers = new ArrayList<>(hashSet);
+        Collections.sort(numbers);
         for(int i=0;i<nums.length;i++) {
-            if(i < integers.size())
-            nums[i] = integers.get(i);
+            if(i < numbers.size()) {
+                nums[i] = numbers.get(i);
+            }
         }
-        return withoutDuplicates.size();
+        return hashSet.size();
     }
 }
