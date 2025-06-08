@@ -1,34 +1,37 @@
 package medium;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+
 //https://leetcode.com/problems/longest-substring-without-repeating-characters/submissions/
 public class LongestSubstring {
-    public static void main(String[]args) {
+    public static void main(String[] args) {
         String a = "abcabcbb";
         String b = "bbbbb";
         String c = "pwwkew";
-        System.out.println(lengthOfLongestSubstring(a));
+        String d = "aab";
+        String e = "dvdf";
+        System.out.println(lengthOfLongestSubstring(e));
     }
+
     public static int lengthOfLongestSubstring(String s) {
-        int n = s.length();
-        int maxLength = 0;
-        int left = 0;
         Set<Character> set = new HashSet<>();
-        for(int right=0; right<n;right++) {
-            if(!set.contains(s.charAt(right))) {
-                set.add(s.charAt(right));
-                maxLength = Math.max(maxLength,right-left+1);
-            } else {
-                while(s.charAt(left) != s.charAt(right)) {
-                    set.remove(s.charAt(left));
-                    left++;
-                }
-                set.remove(s.charAt(left));
-                left++;
-                set.add(s.charAt(right));
+        List<Integer> list = new ArrayList<>();
+        int startingIndex = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (!set.add(s.charAt(i))) {
+                startingIndex++;
+                list.add(set.size());
+                set.clear();
+                i = startingIndex - 1;
             }
         }
-        return maxLength;
+        list.add(set.size());
+        Collections.sort(list, Comparator.reverseOrder());
+        return list.get(0);
     }
 }
