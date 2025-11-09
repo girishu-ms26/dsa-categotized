@@ -3,15 +3,9 @@ package easy;
 // https://leetcode.com/problems/search-insert-position/
 public class InsertPosition {
     public static void main(String[] args) {
-        int[] a = {1, 3, 5, 6, 1, 1, 1, 1, 1, 1, 1,};
+        int[] a = {1, 3, 5, 6};
         int aa = 5;
-        int[] b = {1, 3, 5, 6};
-        int bb = 2;
-        int[] c = {1, 3, 5, 6};
-        int cc = 7;
-        int[] d = {-1, 3, 5, 6};
-        int dd = 0;
-        System.out.println(searchInsert(d, dd));
+        System.out.println(searchInsert(a, aa));
     }
 
     public static int searchInsert(int[] nums, int target) {

@@ -1,6 +1,6 @@
 package easy;
 
-//https://leetcode.com/problems/missing-number/submissions/1104181838/
+//https://leetcode.com/problems/missing-number
 
 public class MissingNumber {
     public static void main(String[]args) {

@@ -12,11 +12,12 @@ public class MergeSortedArray {
         for (int i = m; i < m + n; i++) {
             nums1[i] = nums2[i - m];
         }
-        int temp = 0;
-        for (int i = 0; i < nums1.length; i++) {
-            temp = nums1[i];
-            for (int j = i + 1; j < nums1.length; j++) {
-                if (temp > nums1[j]) {
+
+        int l = nums1.length;
+        for (int i = 0; i < l; i++) {
+            int temp = nums1[i];
+            for (int j = i + 1; j < l; j++) {
+                if(temp > nums1[j]) {
                     temp = nums1[j];
                     nums1[j] = nums1[i];
                     nums1[i] = temp;

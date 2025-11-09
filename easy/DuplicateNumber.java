@@ -11,6 +11,6 @@ public class DuplicateNumber {
     }
     public static int findDuplicate(int[] nums) {
         HashSet<Integer> hashSet = new HashSet<>();
-        return Arrays.stream(nums).parallel().filter(i -> !hashSet.add(i)).findFirst().getAsInt();
+        return Arrays.stream(nums).filter(n -> !hashSet.add(n)).findFirst().getAsInt();
     }
 }
