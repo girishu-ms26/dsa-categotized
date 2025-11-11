@@ -1,6 +1,7 @@
 package medium;
 
 import java.util.Arrays;
+import java.util.concurrent.Callable;
 
 // https://leetcode.com/problems/sort-colors
 public class SortColours {
@@ -12,10 +13,10 @@ public class SortColours {
     public static void sortColors(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
             int temp = nums[i];
-            for (int k = i + 1; k < nums.length; k++) {
-                if(temp > nums[k]) {
-                    temp = nums[k];
-                    nums[k] = nums[i];
+            for (int j = i + 1; j < nums.length; j++) {
+                if(temp > nums[j]) {
+                    temp = nums[j];
+                    nums[j] = nums[i];
                     nums[i] = temp;
                 }
             }
